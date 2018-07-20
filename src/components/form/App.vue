@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="jumbotron">
-       <arreglo :multiple="false" v-on:changed="viewnewdata" v-bind:TiposCobertura="TiposCobertura"></arreglo>
+       <arreglo :multiple="true" v-on:changed="viewnewdata" v-bind:TiposCobertura="TiposCobertura"></arreglo>
     </div>
  </div>
 </template>

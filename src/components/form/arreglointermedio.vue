@@ -2,20 +2,26 @@
   <div>
     <form v-if=" multiple" >
        <ul v-for="(tipos, index) in TiposCompletos" :key="index">
-          <input type="checkbox" id="info" v-bind:value="tipos.data" v-model="tipos.checked">
+         <div class="row">
+        <div class="col-8">
+          <q-checkbox id="info" v-bind:value="tipos.data" v-model="tipos.checked"/>
               <label for="tipos.data"> {{tipos.data}} </label>
-              <div v-if='tipos.checked'>
-                <input type="text" class="form-control" placeholder="" value="" v-model='tipos.dato'>
-    </div>
+        </div>
+            <div class="col-4">  
+              
+                <q-input v-if='tipos.checked' type="number" prefix="Cubre $" class="form-control" value="" v-model='tipos.dato'/>
+              
+            </div>  
+          </div>
        </ul>
     </form>
 
     <template v-else >
        <ul v-for="(tipos, index) in TiposCompletos" :key="index">
-           <q-radio val="option" id="info" name="datos" v-bind:value="tipos.data" v-model="tiporadio" /> 
+           <q-radio v-bind:val="tipos.data" v-model="tiporadio" /> 
               <label for="tipos.data"> {{tipos.data}} </label>
               <div v-if='tiporadio === tipos.data'>
-                <input type="text" class="form-control" placeholder="" value="" v-model='tipos.dato'>
+                <q-input type="number" prefix="Cubre $" class="form-control" value="" v-model='tipos.dato'/>
               </div>
               
 

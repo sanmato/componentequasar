@@ -59,7 +59,8 @@ module.exports = function (ctx) {
         'QCheckbox',
         'QInput',
         'QOptionGroup',
-        'QRadio'
+        'QRadio',
+        'QField'
       ],
       directives: [
         'Ripple'
