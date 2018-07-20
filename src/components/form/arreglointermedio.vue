@@ -12,11 +12,13 @@
 
     <template v-else >
        <ul v-for="(tipos, index) in TiposCompletos" :key="index">
-          <q-option-group color="secondary" type="radio" name="datos" v-bind:value="tipos.data" v-model="tiporadio" />
+           <q-radio val="option" id="info" name="datos" v-bind:value="tipos.data" v-model="tiporadio" /> 
               <label for="tipos.data"> {{tipos.data}} </label>
               <div v-if='tiporadio === tipos.data'>
                 <input type="text" class="form-control" placeholder="" value="" v-model='tipos.dato'>
               </div>
+              
+
        </ul>
     </template>
 
